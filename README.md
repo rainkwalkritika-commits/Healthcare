@@ -1,6 +1,6 @@
 # HealthCare Clinic 🏥
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit-blue?style=for-the-badge)](https://HealthCare Clinic.vercel.app/)  
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit-blue?style=for-the-badge)]([https://HealthCare Clinic.vercel.app/](https://healthcare-sage-ten.vercel.app/))  
 
 > 🚑 **The OPD Ticket Booking System That Doesn’t Make You Hate Hospitals!** 🏥💉
 > 
