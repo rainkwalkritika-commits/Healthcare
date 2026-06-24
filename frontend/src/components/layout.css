@@ -1,0 +1,336 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Layout Container */
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* For z-index stacking */
+  color: #ffffff;
+  background: none; /* Background moved to ::before */
+}
+
+/* Background Pseudo-Element */
+.layout-container::before {
+  content: '';
+  position: fixed; /* Fixed for background effect */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/laptopbg.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1; /* Behind content */
+}
+
+/* Overlay Pseudo-Element */
+.layout-container::after { /* Changed from ::before to ::after */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 0; /* Above background, below content */
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: clamp(0.5rem, 1.5vw, 1rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s ease;
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: clamp(30px, 8vw, 60px);
+  border-radius: 8px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Hospital Name */
+.hospital-name {
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  text-align: center;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 1200px; /* Constrain content width */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255, 255, 255, 0.1);
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+  border-radius: 8px 8px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  margin: clamp(0.5rem, 1.5vw, 1rem);
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s ease;
+}
+
+.footer:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(0, 123, 255, 0.4);
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Scrollbar Base Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 123, 255, 0.7);
+}
+
+/* Mobile-First Responsive Design */
+@media (max-width: 480px) {
+  .layout-container {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+    flex-direction: row; /* Logo and title in same line */
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: clamp(25px, 6vw, 35px);
+  }
+
+  .hospital-name {
+    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+    margin: 0 0.5rem 0 0.75rem; /* Adjust spacing */
+    flex-grow: 1;
+  }
+
+  .content {
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+
+  .footer {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+  }
+
+  .footer-copyright {
+    font-size: clamp(0.5rem, 1.25vw, 0.75rem);
+    padding: 0 0.5rem;
+  }
+
+  /* Thinner Scrollbar on Smartphones */
+  ::-webkit-scrollbar {
+    width: 4px; /* Thinner on mobile */
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .layout-container {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header {
+    padding: 0.75rem;
+    margin: 0.75rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: clamp(30px, 5vw, 50px);
+  }
+
+  .hospital-name {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-left: 0.75rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 0.75rem;
+    margin: 0.75rem;
+  }
+
+  .footer-copyright {
+    font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layout-container {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header {
+    padding: 1rem;
+    margin: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: clamp(40px, 4vw, 60px);
+  }
+
+  .hospital-name {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    margin-left: 1rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .footer {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .footer-copyright {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  .layout-container {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header {
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+    margin: clamp(0.75rem, 2vw, 1.25rem);
+    flex-direction: row;
+    justify-content: flex-start; /* Logo on left */
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    height: clamp(50px, 5vw, 70px);
+  }
+
+  .hospital-name {
+    font-size: clamp(1.5rem, 3vw, 2.375rem);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the title */
+    margin-left: 0; /* Override margin for centering */
+  }
+
+  .content {
+    padding: clamp(1rem, 5vw, 3rem);
+  }
+
+  .footer {
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+    margin: clamp(0.5rem, 2vw, 1.25rem);
+  }
+
+  .footer-copyright {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .footer {
+    transition: none;
+  }
+}
+
+/* Ensure Full Screen Fit */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent; /* Rely on .layout-container for bg */
+}
