@@ -62,7 +62,7 @@
 Clone this repo and get started with HealthCare Clinic! 🏥
 ```bash
 # Clone the repo
-git clone https://github.com/healthcarey-pandeyy/HealthCare Clinic.git
+git clone https://github.com/healthcare-clinic/HealthCare Clinic.git
 cd HealthCare Clinic
 
 # Install frontend dependencies
@@ -99,8 +99,8 @@ Got ideas? Found a bug? Want to make it better? PRs are welcome! 🎉
 ---
 
 ## 📞 Contact
-💌 **healthcare Pandey**  
-📧 [healthcarey.pandeyy@gmail.com](mailto:healthcarey.pandeyy@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/healthcarey-pandeyy) | [GitHub](https://github.com/healthcarey-pandeyy)
+💌 **healthcare clinic**  
+📧 [healthcare.clinic@gmail.com](mailto:healthcare.clinic@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/healthcare-clinic) | [GitHub](https://github.com/healthcare-clinic)
 
 👨‍💻 *"Building the future of hassle-free OPD appointments, one line of code at a time."* 🚀
