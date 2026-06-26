@@ -33,7 +33,7 @@
 ![Confirmation Popup](https://github.com/user-attachments/assets/4251d015-95ff-454e-8465-96a860c49b31)
 
 ### 🎫 Sample OPD Ticket PDF
-📄 **[Click to view or download Full OPD Ticket (PDF)](https://github.com/healthcarey-pandeyy/HealthCare Clinic/blob/main/OPD_Ticket_KC12032025110732.pdf)**
+📄 **[Click to view or download Full OPD Ticket (PDF)](OPD_Ticket_KC12032025110732.pdf)**
 
 📌 *More coming soon! Stay tuned.* 😉
 
