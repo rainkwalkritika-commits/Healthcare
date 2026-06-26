@@ -9,7 +9,7 @@
 ---
 
 ## 🌐 Live Demo
-🎉 **Try it out here:** 👉 [HealthCare Clinic.vercel.app](https://HealthCare Clinic.vercel.app/) 🚀
+🎉 **Try it out here:** 👉[https://HealthCare Clinic.vercel.app/](https://healthcare-sage-ten.vercel.app/) 🚀
 
 ---
 
